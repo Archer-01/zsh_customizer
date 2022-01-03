@@ -1,12 +1,6 @@
 #!/bin/zsh
 
-# Colors
-NC="\e[1;0m"
-RED="\e[1;31m"
-GREEN="\e[1;32m"
-YELLOW="\e[1;33m"
-BLUE="\e[1;34m"
-PURPLE="\e[1;35m"
+source script/colors.sh
 
 # URLs
 OMZ_URL="https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
@@ -46,7 +40,7 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
 else
 	echo "${BLUE}oh-my-zsh${NC} is not installed"
 	echo "Installing ${BLUE}oh-my-zsh${NC}..."
-	./omz.sh &> /dev/null
+	./oh-my-zsh/omz.sh &> /dev/null
 	if [ "$?" -eq "0" ]; then
 		echo "${BLUE}oh-my-zsh${NC} installed ${GREEN}successfully${NC}"
 	else
